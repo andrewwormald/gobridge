@@ -1,0 +1,2 @@
+# Command used to generate the example
+ go run main.go --api="./example/backend" --mod="github.com/andrewwormald/gobridge" --ts="./example/frontend/services/example.ts" --ts_service="example" --server="./example/backend/server/server_gen.go"

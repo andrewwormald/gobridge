@@ -1,10 +1,11 @@
 package templates
 
 import (
-	"gobridge/reader"
 	"os"
 	"strings"
 	"text/template"
+
+	"github.com/andrewwormald/gobridge/reader"
 )
 
 type HTTPServer struct {
