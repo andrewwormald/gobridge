@@ -1,3 +1,3 @@
 module github.com/luno/gobridge
 
-go 1.20
+go 1.15

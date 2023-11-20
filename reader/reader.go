@@ -122,10 +122,17 @@ func readFile(fset *token.FileSet, mName string, filePath string, d *Data, recur
 				return false
 			}
 
+			dirLvlCorrection := ""
 			path := strings.ReplaceAll(t.Path.Value, `"`, "")
+			if strings.HasPrefix(path, mName) {
+				path = strings.ReplaceAll(path, mName, "")
+			} else {
+				return false
+			}
+
 			pathList := strings.Split(path, "/")
 			path = strings.Join(pathList[1:], "/")
-			dirLvlCorrection := strings.Split(filePath, strings.Split(path, "/")[0])[0]
+			dirLvlCorrection = strings.Split(filePath, strings.Split(path, "/")[0])[0]
 
 			fi, err := ioutil.ReadDir(dirLvlCorrection + path)
 			if err != nil {

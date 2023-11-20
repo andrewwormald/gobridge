@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"gobridge/example/backend/second"
+	"github.com/luno/gobridge/example/backend/second"
 )
 
 type Example interface {

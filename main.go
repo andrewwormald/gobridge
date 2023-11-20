@@ -4,8 +4,8 @@ import (
 	"flag"
 	"math/rand"
 
-	"gobridge/generator"
-	"gobridge/reader"
+	"github.com/luno/gobridge/generator"
+	"github.com/luno/gobridge/reader"
 )
 
 var inputFile = flag.String("api", "", "Target file to read")

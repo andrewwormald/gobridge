@@ -1,15 +1,16 @@
 package templates
 
 import (
-	"gobridge/reader"
 	"os"
 	"strings"
 	"text/template"
+
+	"github.com/luno/gobridge/reader"
 )
 
 type TSService struct {
 	Name        string
-	Interfaces []TSInterface
+	Interfaces  []TSInterface
 	Enums       []TSEnum
 	ModName     string
 	MethodNames []string
@@ -28,7 +29,7 @@ type TSEnum struct {
 func (tss *TSService) AddTo(file *os.File) error {
 	funcMap := template.FuncMap{
 		"ToLower": strings.ToLower,
-		"ToCamelCase": func(s string) string{
+		"ToCamelCase": func(s string) string {
 			ls := strings.Split(s, "")
 			ls[0] = strings.ToUpper(ls[0])
 			return strings.Join(ls, "")
