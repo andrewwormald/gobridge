@@ -126,7 +126,7 @@ func readFile(fset *token.FileSet, mName string, filePath string, d *Data, recur
 			path := strings.ReplaceAll(t.Path.Value, `"`, "")
 			if strings.HasPrefix(path, mName) {
 				path = strings.ReplaceAll(path, mName, "")
-			} else if strings.HasPrefix(path, "github.com") {
+			} else {
 				return false
 			}
 
