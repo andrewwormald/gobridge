@@ -2,12 +2,13 @@ package generator
 
 import (
 	"fmt"
-	"gobridge/ioeasy"
-	"gobridge/reader"
-	"gobridge/templates"
 	"math/rand"
 	"os"
 	"strings"
+
+	"github.com/andrewwormald/gobridge/ioeasy"
+	"github.com/andrewwormald/gobridge/reader"
+	"github.com/andrewwormald/gobridge/templates"
 )
 
 func TSClient(tsPath, serviceName string, d *reader.Data) error {
@@ -304,7 +305,7 @@ func switchToTypescriptType(typ string) string {
 		if strings.HasPrefix(typ, "map") { // map[int64]bool
 			typ = strings.TrimPrefix(typ, "map[") // int64]bool
 
-			keyAndValueTypes := []string{} // 0 - key, 1 - value of a map
+			keyAndValueTypes := []string{}              // 0 - key, 1 - value of a map
 			for _, v := range strings.Split(typ, "]") { // [int64, bool]
 				keyAndValueTypes = append(keyAndValueTypes, switchToTypescriptType(v))
 			}
